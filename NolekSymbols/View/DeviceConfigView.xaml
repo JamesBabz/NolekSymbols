@@ -52,8 +52,7 @@
                         <DataGridTextColumn Width="auto" Header="Type" Binding="{Binding Path=Type}" IsReadOnly="True"/>
                         <DataGridTextColumn Width="*" Header="Tag" IsReadOnly="True">
                             <DataGridTextColumn.Binding>
-                                <MultiBinding StringFormat="{}M{0}.{1}{2}">
-                                    <Binding Path="DataContext.SelectedDevice.Mac" Converter="{StaticResource ByteArrayToHexStringConverter}"  RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}"/>
+                                <MultiBinding StringFormat="{} {0}.{1}">
                                     <Binding Path="Type" />
                                     <Binding Path="ChannelSettings[0].Value" />
                                 </MultiBinding>
