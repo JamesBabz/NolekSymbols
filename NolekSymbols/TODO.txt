@@ -1,0 +1,81 @@
+﻿Solved At -:- Task
+
+13/09, 27/09 -:- Comment everything
+13/09, 27/09 -:- ReSharper refactoring
+
+14/09 -:- Center name below image
+
+18/09 -:- Show image in dropdown and list
+
+19/09 -:- XML export/import save/reset (always load a saved file. But select a xml file)
+
+20/09 -:- Show x and y pos
+20/09 -:- Rotateable symbol
+
+24/09 -:- Basic symbol show colors
+24/09 -:- Loaded symbols show colors
+
+26/09 -:- on/off toggle for basic symbols
+
+
+
+
+Fix: Lines wrong on rotated symbols
+Fix: Button symbol
+
+InputFields culture based  ",/.".
+Tags
+Click event conditions
+
+
+Disable parts of symbol if possible??
+Save/discard changes made when adding and removing a color condition
+Handle errors
+OperatorComboBox binding (creating default value on startup? perhaps)
+Fix: save/discard changes
+Deside if updatecolor method in symbolImageModel should be moved? Maybe inside ColorDetermineModel? 
+Fix or remove on grid click - move method to on new symbol click and do nothing on grid
+Test a specific value
+
+
+
+Graph for selected values.
+
+
+
+
+/// Region Template
+
+        #region Properties
+
+        #endregion Properties
+
+
+        #region Constructors
+
+        #endregion Constructors
+
+
+        #region Methods
+
+        #endregion Methods
+
+
+        #region INotify
+
+        /// <inheritdoc />
+        /// <summary>
+        ///     PropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        ///     Notify property changed
+        /// </summary>
+        /// <param name="prop">property name</param>
+        public void NotifyPropertyChanged(string prop)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+
+        #endregion INotify

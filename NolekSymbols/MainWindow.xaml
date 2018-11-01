@@ -1,0 +1,51 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:NolekSymbols.View"
+    xmlns:viewModel="clr-namespace:NolekSymbols.ViewModel"
+    xmlns:nolekSymbols="clr-namespace:NolekSymbols"
+    mc:Ignorable="d"
+    Title="Nolek Symbols" WindowState="Maximized"
+    x:Class="NolekSymbols.MainWindow">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
+
+    <DockPanel x:Name="DockPanel">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Import XML..." Click="Import_OnClick" />
+                <MenuItem Header="_Export XML..." Click="Export_OnClick" />
+                <MenuItem Header="_Save" Click="Save_OnClick" />
+                <MenuItem Header="_Clear Layout" Click="ClearLayout_OnClick" />
+                <Separator />
+                <MenuItem Header="E_xit" Click="Exit_OnClick" />
+            </MenuItem>
+            <MenuItem Header="_Options">
+                <MenuItem Header="Set to _run mode" Click="SetMode_OnClick"
+                          IsEnabled="{Binding Source={x:Static Application.Current}, Path=(nolekSymbols:App.IsRunMode), Converter={StaticResource InvertBooleanConverter}}" />
+                <MenuItem Header="Set to _edit mode" Click="SetMode_OnClick"
+                          IsEnabled="{Binding Source={x:Static Application.Current}, Path=(nolekSymbols:App.IsRunMode)}" />
+                <MenuItem Header="Show _device config" Click="DeviceConfig_OnClick"/>
+            </MenuItem>
+        </Menu>
+        <view:SymbolListView DataContext="{Binding Path=SymbolListViewModel}"
+                             DockPanel.Dock="Left"
+                             Visibility="{Binding Source={x:Static Application.Current}, 
+                                Path=(nolekSymbols:App.IsRunMode),
+                                Converter={StaticResource BooltoVisibilityConverter}, ConverterParameter=inverse}" />
+        <Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="1" Margin="5,0,0,0"
+                Visibility="{Binding Source={x:Static Application.Current}, 
+                                Path=(nolekSymbols:App.IsRunMode),
+                                Converter={StaticResource BooltoVisibilityConverter}, ConverterParameter=inverse}" />
+        <view:SymbolTabView DataContext="{Binding Path=SymbolTabViewModel}" DockPanel.Dock="Bottom"
+                            Visibility="{Binding Source={x:Static Application.Current}, 
+                                Path=(nolekSymbols:App.IsRunMode),
+                                Converter={StaticResource BooltoVisibilityConverter}, ConverterParameter=inverse}" />
+        <view:LineView DataContext="{Binding Path=LineViewModel}" />
+        <view:SymbolView DataContext="{Binding Path=SymbolViewModel}" />
+    </DockPanel>
+</Window>

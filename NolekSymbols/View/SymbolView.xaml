@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="NolekSymbols.View.SymbolView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:model="clr-namespace:NolekSymbols.Model"
+             xmlns:view="clr-namespace:NolekSymbols.View"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="SymbolView_OnLoaded"
+             x:Name="SymbolViewControl"
+             DataContext="{Binding}">
+    <Grid AllowDrop="True"
+          Drop="SymbolView_OnDrop"
+          ClipToBounds="True"
+          MouseLeftButtonDown="Grid_OnPreviewMouseLeftButtonDown"
+          Name="SymbolViewGrid">
+        <ItemsControl ItemsSource="{Binding Path=Symbols}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas Name="MyCanvas" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="model:SymbolModel">
+                    <StackPanel ToolTip="{Binding Path=Tooltip}"
+                                MouseMove="SymbolContainer_OnMouseMove"
+                                MouseLeftButtonDown="SymbolContainer_OnMouseLeftButtonDown"
+                                MouseLeftButtonUp="SymbolContainer_OnMouseLeftButtonUp">
+                        <view:SymbolControl DataContext="{Binding}" Width="auto" Height="auto" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Canvas.Left" Value="{Binding Path=CanvasLeft}" />
+                    <Setter Property="Canvas.Top" Value="{Binding Path=CanvasTop}" />
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+        </ItemsControl>
+    </Grid>
+</UserControl>

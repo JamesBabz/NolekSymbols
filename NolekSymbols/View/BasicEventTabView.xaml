@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="NolekSymbols.View.BasicEventTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:NolekSymbols.ViewModel"
+             xmlns:model="clr-namespace:NolekSymbols.Model"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid d:DataContext="{d:DesignInstance viewModel:SymbolTabViewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="100" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<TextBlock>Clickable</TextBlock>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <RadioButton GroupName="Clickable" Content="Enabled"
+                         IsChecked="{Binding Path=IsClickableEnabled, Mode=TwoWay}" />
+            <RadioButton GroupName="Clickable" Content="Disabled"
+                         IsChecked="{Binding Path=IsClickableEnabled, Mode=OneWay, Converter={StaticResource NegateBooleanConverter}}" />
+        </StackPanel>-->
+        <TextBlock>Event</TextBlock>
+        <ComboBox Grid.Row="0" Grid.Column="1" />
+        <ComboBox Grid.Column="0" Grid.Row="1" ItemsSource="{StaticResource MockTags}"
+                  Visibility="{Binding Path=IsClickableEnabled, Converter={StaticResource BooltoVisibilityConverter}}" />
+        <TextBox Grid.Column="1" Grid.Row="1"
+                 Visibility="{Binding Path=IsClickableEnabled, Converter={StaticResource BooltoVisibilityConverter}}" />
+        <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                Content="{Binding Path=SelectedSymbol.(model:BasicSymbolModel.IsOpen), Converter={StaticResource BoolToStringConverter}, ConverterParameter=Open:Closed}"
+                Click="OpenCloseButton_OnClick" d:DataContext="{d:DesignData MainViewModel}"
+                Visibility="{Binding Path=IsClickableEnabled, Converter={StaticResource BooltoVisibilityConverter}}" />
+    </Grid>
+</UserControl>

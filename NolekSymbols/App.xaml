@@ -1,0 +1,43 @@
+﻿<Application x:Class="NolekSymbols.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+             xmlns:converters="clr-namespace:NolekSymbols.Helpers.Converters"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <collections:ArrayList x:Key="Operators">
+            <system:String>Default</system:String>
+            <system:String>=</system:String>
+            <system:String>-</system:String>
+            <system:String>&gt;</system:String>
+            <system:String>&lt;</system:String>
+            <system:String>&gt;=</system:String>
+            <system:String>&lt;=</system:String>
+        </collections:ArrayList>
+
+        <collections:ArrayList x:Key="MockTags">
+            <system:String>Q1210</system:String>
+            <system:String>Q1400</system:String>
+            <system:String>K500</system:String>
+            <system:String>K450</system:String>
+            <system:String>V15</system:String>
+            <system:String>V17</system:String>
+            <system:String>GQ57</system:String>
+        </collections:ArrayList>
+
+
+        <converters:SymbolBaseTypeToStringConverter x:Key="SymbolBaseTypeToStringConverter" />
+        <converters:OperatorToVisibilityConverter x:Key="OperatorToVisibilityConverter" />
+        <converters:NullToEmptyStringConverter x:Key="NullToEmptyStringConverter" />
+        <converters:IsSymbolAdvancedBoolToVisibilityConverter x:Key="IsSymbolAdvancedBoolToVisibilityConverter" />
+        <converters:BoolToIntConverter x:Key="BoolToIntConverter" />
+        <converters:BoolToStringConverter x:Key="BoolToStringConverter" />
+        <converters:BooltoVisibilityConverter x:Key="BooltoVisibilityConverter" />
+        <converters:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+        <converters:ByteArrayToHexStringConverter x:Key="ByteArrayToHexStringConverter"/>
+        <xctk:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+    </Application.Resources>
+</Application>

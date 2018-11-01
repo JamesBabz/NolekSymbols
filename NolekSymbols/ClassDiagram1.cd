@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NolekSymbols.App" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAggAAAYAAAAAAACAAEUBAAAAAACAABAAAAEAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.AbstractClassHelper" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\AbstractClassHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Helpers.MathHelper" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\MathHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Helpers.SerializeHelper" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAACEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\SerializeHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.BoolToIntConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\BoolToIntConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.BoolToStringConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\BoolToStringConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.BooltoVisibilityConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\BooltoVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.IsSymbolAdvancedBoolToVisibilityConverter" Collapsed="true"
+         BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\IsSymbolAdvancedBoolToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.NegateBooleanConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\NegateBooleanConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.NullToEmptyStringConverter" Collapsed="true"
+         BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\NullToEmptyStringConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.OperatorToVisibilityConverter" Collapsed="true"
+         BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\OperatorToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Helpers.Converters.SymbolBaseTypeToStringConverter" Collapsed="true"
+         BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Converters\SymbolBaseTypeToStringConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Model.AdvancedSymbolModel" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\AdvancedSymbolModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Model.BasicSymbolModel" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAABAAIAAgAIAAAAAAAAABQAAAABAAAAAAAAgCAAAA=</HashCode>
+      <FileName>Model\BasicSymbolModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Model.ColorDetermineModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAAAAIAIAAAAAAAAAAgAAEAAAwAAAQgAAAICA=</HashCode>
+      <FileName>Model\ColorDetermineModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Model.SymbolImageModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEoEIAAAAAAAAoQAAAAACUACkBAAACAAAAAAAEAAoAg=</HashCode>
+      <FileName>Model\SymbolImageModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Model.SymbolModel" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACIAAAIAAAAIABAAAAAQQAwAFACJABAAAiIAgCACA=</HashCode>
+      <FileName>Model\SymbolModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.194" />
+  </Class>
+  <Class Name="NolekSymbols.Model.SymbolShapeModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEAAAEACAABIAEAAAAAAAAgAAAAEEAAQAAAAgEAAA=</HashCode>
+      <FileName>Model\SymbolShapeModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.Model.BE.FourPointValveModel" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\BE\FourPointValveModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Model.BE.LightBulbModel" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\BE\LightBulbModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Model.BE.ThreePointValveModel" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\BE\ThreePointValveModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Model.BE.ValueFieldModel" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Model\BE\ValueFieldModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Model.BE.ValveModel" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\BE\ValveModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Properties.Resources" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.Properties.Settings" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.View.AdvancedAnimationTabView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAQAAAACAAAACAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AdvancedAnimationTabView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.BasicAnimationTabView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAABAAAAAACAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\BasicAnimationTabView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.BasicEventTabView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\BasicEventTabView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.SaveChangesWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SaveChangesWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.SymbolControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAIAAIAAAAIAAAEQgABAAgAoACYEAQAEAAA=</HashCode>
+      <FileName>View\SymbolControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.SymbolListView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SymbolListView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.SymbolTabView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAgAAAAAAAAAAAAAAAAAAQAAQAAAAAAAIAAA=</HashCode>
+      <FileName>View\SymbolTabView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.SymbolView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkgAAAACBAAACAAIAAAAhCAAAAAAAAAgAAAAAQAAAAA=</HashCode>
+      <FileName>View\SymbolView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.View.ValueFieldAnimationTab" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ValueFieldAnimationTab.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.ViewModel.MainViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAIQIAAAIQAAAoAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.ViewModel.SymbolListViewModel" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SymbolListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NolekSymbols.ViewModel.SymbolTabViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAICFgAAIQCAAgKAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>ViewModel\SymbolTabViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NolekSymbols.ViewModel.SymbolViewModel" Collapsed="true">
+    <Position X="20.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SymbolViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="NolekSymbols.View.ValueFieldAnimationTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="ValueFieldAnimationTab_OnLoaded" d:DataContext="{d:DesignData SymbolTabViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ComboBox
+            SelectedIndex="{Binding Path=SelectedSymbol.IsInput, Converter={StaticResource BoolToIntConverter}, UpdateSourceTrigger=Explicit}">
+            <ComboBoxItem>Output</ComboBoxItem>
+            <ComboBoxItem>Input</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Grid.Row="1" Text="{Binding Path=SelectedSymbol.OutputValue}" />
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding Path=SelectedSymbol.ValueSteps}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!-- Converter???? https://stackoverflow.com/questions/44883057/doubles-decimal-separator-wpf -->
+        <TextBox Grid.Row="2" Text="{Binding Path=SelectedSymbol.OutputValue}" />
+        <!--<xctk:DecimalUpDown UpdateValueOnEnterKey="True" FormatString="{Binding Path=SelectedSymbol.ValueFormatString}" Grid.Row="2" ShowButtonSpinner="False"/>-->
+    </Grid>
+</UserControl>

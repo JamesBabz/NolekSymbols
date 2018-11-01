@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="NolekSymbols.View.SymbolTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:view="clr-namespace:NolekSymbols.View"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="MainLoaded"
+             DataContext="{Binding}">
+    <StackPanel Visibility="{Binding Path=TabVisibility}">
+        <TextBlock Text="{Binding Path=SelectedSymbol.Name, NotifyOnSourceUpdated=True}" />
+        <TabControl Height="300" x:Name="TabControl" SelectedIndex="{Binding Path=SelectedTabIndex, Mode=TwoWay}">
+            <TabItem Header="General" DataContext="{Binding Path=SelectedSymbol, Mode=TwoWay}">
+                <DockPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0">Name:</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="0"
+                                 Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                 LostFocus="NameChanged" />
+                        <TextBlock Grid.Column="0" Grid.Row="1">Tooltip:</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="1"
+                                 Text="{Binding Path=Tooltip, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                 LostFocus="TooltipChanged" />
+                        <TextBlock Grid.Column="0" Grid.Row="3">XPos:</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Path=CanvasLeft, StringFormat=N2}" />
+                        <TextBlock Grid.Column="0" Grid.Row="4">YPos:</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Path=CanvasTop, StringFormat=N2}" />
+                    </Grid>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="AnimationTab"
+                     Header="Animation">
+                <TabItem.Style>
+                    <Style TargetType="TabItem">
+                        <Style.Triggers>
+                            <DataTrigger
+                                Binding="{Binding Path=SelectedSymbol, Converter={StaticResource SymbolBaseTypeToStringConverter}}"
+                                Value="AdvancedSymbolModel">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <view:AdvancedAnimationTabView />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding Path=SelectedSymbol, Converter={StaticResource SymbolBaseTypeToStringConverter}}"
+                                Value="BasicSymbolModel">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <view:BasicAnimationTabView />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding Path=SelectedSymbol, Converter={StaticResource SymbolBaseTypeToStringConverter}}"
+                                Value="ValueFieldModel">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <view:ValueFieldAnimationTab />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabItem.Style>
+            </TabItem>
+            <TabItem x:Name="EventTab"
+                     Header="Event">
+                <TabItem.Style>
+                    <Style TargetType="TabItem">
+                        <Style.Triggers>
+                            <DataTrigger
+                                Binding="{Binding Path=SelectedSymbol, Converter={StaticResource SymbolBaseTypeToStringConverter}}"
+                                Value="AdvancedSymbolModel">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <view:AdvancedAnimationTabView />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding Path=SelectedSymbol, Converter={StaticResource SymbolBaseTypeToStringConverter}}"
+                                Value="BasicSymbolModel">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <view:BasicEventTabView />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding Path=SelectedSymbol, Converter={StaticResource SymbolBaseTypeToStringConverter}}"
+                                Value="ValueFieldModel">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <view:ValueFieldAnimationTab />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabItem.Style>
+            </TabItem>
+            <TabItem Header="Test4">
+                <TextBlock>dwqdwqdwq213213213wwqewqeqw</TextBlock>
+            </TabItem>
+
+        </TabControl>
+        <Grid DockPanel.Dock="Bottom">
+            <StackPanel HorizontalAlignment="Left" Width="100" VerticalAlignment="Center">
+                <Button Content="Delete" Padding="5" Click="DeleteButton_OnClick" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Width="100" Margin="10">
+                <Button Content="Save" Padding="5" Margin="0,0,0,10" Click="SaveButton_OnCLick" />
+                <Button Content="Cancel" Padding="5" Click="CancelButton_OnClick" />
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>
