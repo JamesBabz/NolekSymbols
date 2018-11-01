@@ -29,7 +29,7 @@
                           IsEnabled="{Binding Source={x:Static Application.Current}, Path=(nolekSymbols:App.IsRunMode), Converter={StaticResource InvertBooleanConverter}}" />
                 <MenuItem Header="Set to _edit mode" Click="SetMode_OnClick"
                           IsEnabled="{Binding Source={x:Static Application.Current}, Path=(nolekSymbols:App.IsRunMode)}" />
-                <MenuItem Header="Show _device config" Click="DeviceConfig_OnClick"/>
+                <MenuItem Header="Show _device config" Click="DeviceConfig_OnClick" />
             </MenuItem>
         </Menu>
         <view:SymbolListView DataContext="{Binding Path=SymbolListViewModel}"

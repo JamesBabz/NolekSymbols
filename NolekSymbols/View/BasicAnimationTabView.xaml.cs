@@ -30,10 +30,6 @@ namespace NolekSymbols.View
 
         #endregion Constructors
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
         #region Methods
 
         /// <summary>

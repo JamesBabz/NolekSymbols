@@ -37,7 +37,7 @@
         <converters:BoolToStringConverter x:Key="BoolToStringConverter" />
         <converters:BooltoVisibilityConverter x:Key="BooltoVisibilityConverter" />
         <converters:InvertBooleanConverter x:Key="InvertBooleanConverter" />
-        <converters:ByteArrayToHexStringConverter x:Key="ByteArrayToHexStringConverter"/>
+        <converters:ByteArrayToHexStringConverter x:Key="ByteArrayToHexStringConverter" />
         <xctk:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
     </Application.Resources>
 </Application>

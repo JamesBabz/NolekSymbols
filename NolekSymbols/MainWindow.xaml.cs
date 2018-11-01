@@ -161,7 +161,7 @@ namespace NolekSymbols
             var deviceConfigView = new DeviceConfigView();
             deviceConfigView.ShowDialog();
         }
-        #endregion Methods
 
+        #endregion Methods
     }
 }

@@ -3,9 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NolekSymbols.View"
         xmlns:viewModel="clr-namespace:NolekSymbols.ViewModel"
-        xmlns:model="clr-namespace:NolekMoxa.Model;assembly=NolekMoxa"
         mc:Ignorable="d"
         Title="DeviceConfigView" Height="450" Width="800">
     <Window.DataContext>
@@ -35,21 +33,25 @@
             <Button Click="SaveButton_OnClick" Width="50" Margin="5">Save</Button>
             <Button Click="CancelButton_OnClick" Width="50" Margin="5">Cancel</Button>
         </StackPanel>
+
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
+
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="20">Input channels</TextBlock>
-                <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Path=InputChannels}" CanUserAddRows="False" >
+                <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Path=InputChannels}"
+                          CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="auto" Header="GUI Tag" Binding="{Binding Path=ConnectedTag}" IsReadOnly="True"/>
-                        <DataGridTextColumn Width="auto" Header="Type" Binding="{Binding Path=Type}" IsReadOnly="True"/>
+                        <DataGridTextColumn Width="auto" Header="GUI Tag" Binding="{Binding Path=ConnectedTag}"
+                                            IsReadOnly="False" />
+                        <DataGridTextColumn Width="auto" Header="Type" Binding="{Binding Path=Type}" IsReadOnly="True" />
                         <DataGridTextColumn Width="*" Header="Tag" IsReadOnly="True">
                             <DataGridTextColumn.Binding>
                                 <MultiBinding StringFormat="{} {0}.{1}">
@@ -64,18 +66,19 @@
 
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="20">Output channels</TextBlock>
-                <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Path=OutputChannels}" CanUserAddRows="False">
+                <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Path=OutputChannels}"
+                          CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="auto" Header="GUI Tag" Binding="{Binding Path=ConnectedTag}" IsReadOnly="True"/>
-                        <DataGridTextColumn Width="auto" Header="Type" Binding="{Binding Path=Type}" IsReadOnly="True"/>
+                        <DataGridTextColumn Width="auto" Header="GUI Tag" Binding="{Binding Path=ConnectedTag}"
+                                            IsReadOnly="False" />
+                        <DataGridTextColumn Width="auto" Header="Type" Binding="{Binding Path=Type}" IsReadOnly="True" />
                         <DataGridTextColumn Width="*" Header="Tag" IsReadOnly="True">
                             <DataGridTextColumn.Binding>
-                                <MultiBinding StringFormat="{}M{0}.{1}{2}">
-                                    <Binding Path="DataContext.SelectedDevice.Mac" Converter="{StaticResource ByteArrayToHexStringConverter}"  RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}"/>
+                                <MultiBinding StringFormat="{}{0}.{1}">
                                     <Binding Path="Type" />
                                     <Binding Path="ChannelSettings[0].Value" />
                                 </MultiBinding>

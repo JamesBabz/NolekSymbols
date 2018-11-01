@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NolekMoxa.Model;
 
 namespace NolekSymbols.ViewModel
 {
     public class DeviceConfigViewModel : INotifyPropertyChanged
     {
-        private ConnectedDevice _selectedDevice;
 
         #region Properties
+
+        private ConnectedDevice _selectedDevice;
 
         public ObservableCollection<ConnectedDevice> ConnectedDevices { get; set; }
         public ObservableCollection<Channel> InputChannels { get; set; }
@@ -21,12 +18,12 @@ namespace NolekSymbols.ViewModel
 
         public ConnectedDevice SelectedDevice
         {
-            get { return _selectedDevice; }
+            get => _selectedDevice;
             set
             {
-                _selectedDevice = value; 
+                _selectedDevice = value;
                 NotifyPropertyChanged("SelectedDevice");
-                SortChannelsByInOut();
+                SortChannelsByInOut(); // Sort channels for the device
             }
         }
 
@@ -47,18 +44,17 @@ namespace NolekSymbols.ViewModel
 
         #region Methods
 
+        /// <summary>
+        ///     Sorts the channels between in- and outputs
+        /// </summary>
         private void SortChannelsByInOut()
         {
             InputChannels.Clear();
             OutputChannels.Clear();
             foreach (var channel in SelectedDevice.Channels.Where(c => c.IsInput == true))
-            {
                 InputChannels.Add(channel);
-            }
             foreach (var channel in SelectedDevice.Channels.Where(c => c.IsInput == false))
-            {
                 OutputChannels.Add(channel);
-            }
         }
 
         #endregion Methods

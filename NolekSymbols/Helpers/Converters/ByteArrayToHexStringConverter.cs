@@ -17,7 +17,7 @@ namespace NolekSymbols.Helpers.Converters
         /// <returns>The value if its not null. An empty string if the value was null</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var ba = (byte[])value;
+            var ba = (byte[]) value;
             if (ba == null) return null;
             var hex = new StringBuilder(ba.Length * 2);
             foreach (var b in ba)

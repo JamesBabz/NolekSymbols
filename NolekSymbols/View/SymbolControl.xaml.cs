@@ -11,7 +11,6 @@ using NolekSymbols.Helpers;
 using NolekSymbols.Model;
 using NolekSymbols.Model.BE;
 using NolekSymbols.ViewModel;
-using SymbolMotor;
 using Xceed.Wpf.Toolkit.Core.Converters;
 
 namespace NolekSymbols.View
@@ -69,7 +68,6 @@ namespace NolekSymbols.View
                         if (vfm != null) CreateValueField(vfm);
                         break;
                     case SymbolModel.TextPosition.Left:
-                        throw new NotImplementedException();
                         break;
                     case SymbolModel.TextPosition.Bottom:
                         if (_dataContext.Image != null) CreateImageForSymbol(_dataContext);
@@ -77,14 +75,13 @@ namespace NolekSymbols.View
                         MyStackPanel.Children.Add(tb);
                         break;
                     case SymbolModel.TextPosition.Right:
-                        throw new NotImplementedException();
                         break;
                     case SymbolModel.TextPosition.Center:
                         if (_dataContext.Image != null) CreateImageForSymbol(_dataContext);
                         if (vfm != null) CreateValueField(vfm);
                         var g = MyStackPanel.Children[0] as Grid;
                         tb.VerticalAlignment = VerticalAlignment.Center;
-                        g.Children.Add(tb);
+                        g?.Children.Add(tb);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -163,7 +160,7 @@ namespace NolekSymbols.View
         /// <param name="sm">The symbol</param>
         private TextBlock CreateNameBlock(SymbolModel sm)
         {
-            var nameTextBlock = new TextBlock { HorizontalAlignment = HorizontalAlignment.Center };
+            var nameTextBlock = new TextBlock {HorizontalAlignment = HorizontalAlignment.Center};
             RegisterName("tbName", nameTextBlock);
             var nameBinding = new Binding("Name")
             {
@@ -233,7 +230,7 @@ namespace NolekSymbols.View
                 Fill = new SolidColorBrush(Colors.Black)
             };
             var g = p.Parent as Grid;
-            var linePoint = (Point)p.Tag;
+            var linePoint = (Point) p.Tag;
             circle.RenderTransform = new TranslateTransform(linePoint.X - p.Data.Bounds.Width,
                 linePoint.Y - p.Data.Bounds.Height - circleOffset);
             circle.PreviewMouseLeftButtonDown += Circle_OnMouseDown;
@@ -261,16 +258,16 @@ namespace NolekSymbols.View
                 || Keyboard.IsKeyDown(Key.LeftCtrl)) return;
             var i = g.Children.IndexOf(c);
             _mvm.SymbolTabViewModel.IgnoreTabVisibility = true;
-            var sd = (((StackPanel)g.Parent).ActualWidth - _dataContext.Image.DefaultImage.Bounds.Width) / 2;
+            var sd = (((StackPanel) g.Parent).ActualWidth - _dataContext.Image.DefaultImage.Bounds.Width) / 2;
             if (g.Children[i - 1] is Path p)
             {
-                var tagPoint = (Point)p.Tag;
+                var tagPoint = (Point) p.Tag;
                 var fromPoint = new Point
                 {
                     X = _dataContext.CanvasLeft + tagPoint.X + sd,
                     Y = _dataContext.CanvasTop + tagPoint.Y
                 };
-                _currentLine = new CustomLineModel { From = fromPoint };
+                _currentLine = new CustomLineModel {From = fromPoint};
             }
             _mvm.LineViewModel.Lines.Add(_currentLine);
 
@@ -300,7 +297,7 @@ namespace NolekSymbols.View
         {
             if (!(sender is Path p)
                 || !(p.Parent is Grid g)
-                || ((App)Application.Current).IsRunMode) return;
+                || ((App) Application.Current).IsRunMode) return;
             var i = g.Children.IndexOf(p);
             g.Children[i + 1].Visibility = Visibility.Visible;
         }
@@ -323,7 +320,7 @@ namespace NolekSymbols.View
         /// <param name="e">Arguments</param>
         private void ContextMenu_OnOpened(object sender, RoutedEventArgs e)
         {
-            if (!((App)Application.Current).IsRunMode
+            if (!((App) Application.Current).IsRunMode
                 || !(sender is ContextMenu cm)) return;
             cm.IsOpen = false;
         }
@@ -367,7 +364,7 @@ namespace NolekSymbols.View
         private void Rotate_OnClick(object sender, RoutedEventArgs e)
         {
             GetSymbolFromSender(sender).Image.RotateImage(GetGridFromSender(sender),
-                int.Parse((string)ConvertSenderToMenuItem(sender).Tag));
+                int.Parse((string) ConvertSenderToMenuItem(sender).Tag));
         }
 
         /// <summary>
@@ -440,7 +437,7 @@ namespace NolekSymbols.View
         /// <param name="e">Arguments</param>
         private void SetValue_OnClick(object sender, RoutedEventArgs e)
         {
-            var value = int.Parse((string)ConvertSenderToMenuItem(sender).Tag);
+            var value = int.Parse((string) ConvertSenderToMenuItem(sender).Tag);
             GetSymbolFromSender(sender).Value = value;
         }
 
